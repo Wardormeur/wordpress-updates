@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  wordpress:
+    build: .
+    command: ./get-plugins.sh
+    volumes:
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+      - ./get-plugins.sh:/var/www/html/get-plugins.sh
+    environment:
+      - WPENGINE_USERNAME=stagingcoolest
